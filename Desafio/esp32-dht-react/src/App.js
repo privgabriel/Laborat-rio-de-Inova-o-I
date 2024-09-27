@@ -8,7 +8,7 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://TROCAR IP:3000/data"); // Substitua localhost pelo IP correto
+      const response = await axios.get("http://10.0.2.130:3000/data"); // Substitua localhost pelo IP correto
       setData(response.data);
     } catch (error) {
       console.error("Erro ao buscar dados:", error); // Adicionado console.log para debugging
@@ -18,7 +18,7 @@ function App() {
 
   useEffect(() => {
     fetchData();
-    const interval = setInterval(fetchData, 10000); // Atualiza a cada 10 segundos
+    const interval = setInterval(fetchData, 5000); // Atualiza a cada 10 segundos
     return () => clearInterval(interval);
   }, []);
 
